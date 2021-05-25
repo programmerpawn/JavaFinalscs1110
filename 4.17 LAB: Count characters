@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class LabProgram {
+   public static void main(String[] args) {
+      /* Type your code here. */
+      Scanner scnr = new Scanner(System.in);
+      
+      char letterInput;
+	   String userInput;
+	   int i = 0;
+	   int j = 0;
+	   
+	   letterInput = scnr.next().charAt(0);
+	   userInput = scnr.nextLine();
+	   for (i = 0; i < userInput.length(); ++i) {
+		   if (userInput.charAt(i) == letterInput) {
+			   j++;
+		}
+	   }
+		if((j > 1) || (j == 0)){
+			System.out.println(j + " " + letterInput + "'s");
+			   }
+		else{
+			System.out.println(j + " " + letterInput);
+			   }
+   }
+}
