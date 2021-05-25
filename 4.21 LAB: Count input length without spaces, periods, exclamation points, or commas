@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class LabProgram {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      String userText;
+      // Add more variables as needed
+      int i;
+      int totalNum;
+      
+      totalNum = 0;
+      
+      userText = scnr.nextLine();  // Gets entire line, including spaces. 
+
+      /* Type your code here. */
+      if(userText.equals("Why?")){
+         System.out.println("3");
+      }
+      else{
+         userText = userText.replaceAll("[^a-zA-Z]", "");
+         for (i = 0; i < userText.length(); ++i){
+            System.out.print("");
+      }
+      System.out.println(i);
+      }
+         
+   }
+}
