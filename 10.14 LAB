@@ -1,0 +1,78 @@
+PetInformation.java
+import java.util.Scanner;
+
+public class PetInformation {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+
+      Pet myPet = new Pet();
+      Dog myDog = new Dog();
+      
+      String petName, dogName, dogBreed;
+      int petAge, dogAge;
+
+      petName = scnr.nextLine();
+      petAge = scnr.nextInt();
+      scnr.nextLine();
+      dogName = scnr.next();
+      dogAge = scnr.nextInt();
+      scnr.nextLine();
+      dogBreed = scnr.nextLine();
+      
+      // TODO: Create generic pet (using petName, petAge) and then call printInfo       
+      myPet.setName(petName);
+      myPet.setAge(petAge);
+      myPet.printInfo();
+      // TODO: Create dog pet (using dogName, dogAge, dogBreed) and then call printInfo
+      myDog.setName(dogName);
+      myDog.setAge(dogAge);
+      myDog.setBreed(dogBreed);
+      // TODO: Use getBreed(), to output the breed of the dog
+      myDog.printInfo();
+      System.out.println("   Breed: " + myDog.getBreed());
+      
+   }
+}
+
+Pet.java
+public class Pet {
+
+   protected String petName;
+   protected int petAge;
+
+   public void setName(String userName) {
+      petName = userName;
+   }
+
+   public String getName() {
+      return petName;
+   }
+
+   public void setAge(int userAge) {
+      petAge = userAge;
+   }
+
+   public int getAge() {
+      return petAge;
+   }
+
+   public void printInfo() {
+      System.out.println("Pet Information: ");
+      System.out.println("   Name: " + petName);
+      System.out.println("   Age: " + petAge);
+   }
+
+}
+
+Dog.java
+public class Dog extends Pet {
+   private String dogBreed;
+
+   public void setBreed(String userBreed) {
+      dogBreed = userBreed;
+   }
+
+   public String getBreed() {
+      return dogBreed;
+   }
+}
