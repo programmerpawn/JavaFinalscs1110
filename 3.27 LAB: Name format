@@ -1,0 +1,28 @@
+import java.util.Scanner; 
+
+public class LabProgram {
+   public static void main(String[] args) {
+      /* Type your code here. */
+      Scanner scnr = new Scanner(System.in);
+      String firstName;
+      String middleName;
+      String lastName;
+      
+      firstName = scnr.next();
+      middleName = scnr.next();
+      lastName = scnr.next();
+      
+      if (lastName.equals(lastName) == lastName.equals(lastName)) {
+         System.out.print(lastName + ", ");
+         char firstLetter = firstName.charAt(0);
+         System.out.print(firstLetter + ".");
+         char middleLetter = middleName.charAt(0);
+         System.out.println(middleLetter + ".");
+   }  
+      else if (lastName.equals(lastName) != lastName.equals(lastName)) {
+         System.out.print(middleName + ", ");
+         char firstLetter = firstName.charAt(0);
+         System.out.print(firstLetter + ".");
+   }
+   }
+}
