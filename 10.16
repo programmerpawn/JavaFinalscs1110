@@ -1,0 +1,107 @@
+CourseInformation.java
+import java.util.Scanner;
+
+public class CourseInformation {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+
+      Course myCourse = new Course();
+      OfferedCourse myOfferedCourse = new OfferedCourse();
+
+      String courseNumber, courseTitle;
+      String oCourseNumber, oCourseTitle, instructorName, term, classTime;
+
+      courseNumber = scnr.nextLine();
+      courseTitle = scnr.nextLine();
+
+      oCourseNumber =  scnr.nextLine();
+      oCourseTitle =  scnr.nextLine();
+      instructorName = scnr.nextLine();
+      term = scnr.nextLine();
+      classTime = scnr.nextLine();
+
+      myCourse.setCourseNumber(courseNumber);
+      myCourse.setCourseTitle(courseTitle);
+      myCourse.printInfo();
+
+      myOfferedCourse.setCourseNumber(oCourseNumber);
+      myOfferedCourse.setCourseTitle(oCourseTitle);
+      myOfferedCourse.setInstructorName(instructorName);
+      myOfferedCourse.setTerm(term);
+      myOfferedCourse.setClassTime(classTime);
+      myOfferedCourse.printInfo();
+
+      System.out.println("   Instructor Name: " + myOfferedCourse.getInstructorName());
+      System.out.println("   Term: " + myOfferedCourse.getTerm());
+      System.out.println("   Class Time: " + myOfferedCourse.getClassTime());
+   }
+}
+
+course.java
+public class Course{
+   // TODO: Declare private fields - courseNumber, courseTitle
+   private String courseNumber;
+   private String courseTitle;
+   
+   // TODO: Define mutator methods - 
+   //       setCourseNumber(), setCourseTitle()
+   public void setCourseNumber(String userCourseNumber){
+      courseNumber = userCourseNumber;
+   }
+   
+   public void setCourseTitle(String userCourseTitle){
+      courseTitle = userCourseTitle;
+   }
+
+   // TODO: Define accessor methods - 
+   //       getCourseNumber(), getCourseTitle()
+   public String getCourseNumber(){
+      return courseNumber;
+   }
+   
+   public String getCourseTitle(){
+      return courseTitle;
+   }
+   
+
+   // TODO: Define printInfo()
+   public void printInfo(){
+      System.out.println("Course Information: ");
+      System.out.println("   Course Number: " + courseNumber);
+      System.out.println("   Course Title: " + courseTitle);
+   }
+}
+
+OfferedCourse.java
+public class OfferedCourse extends Course {
+   // TODO: Declare private fields - instructorName, term, classTime
+   private String instructorName;
+   private String term;
+   private String classTime;
+   
+   // TODO: Define mutator methods -
+   //      setInstructorName(), setTerm(), setClassTime()
+   public void setInstructorName(String userInstructorName){
+      instructorName = userInstructorName;
+   }
+   
+   public void setTerm(String userTerm){
+      term = userTerm;
+   }
+   
+   public void setClassTime(String userClassTime){
+      classTime = userClassTime;
+   }
+
+   // TODO: Define accessor methods -
+   //      getInstructorName(), getTerm(), getClassTime()
+   public String getInstructorName(){
+      return instructorName;
+   }
+   public String getTerm(){
+      return term;
+   }
+   public String getClassTime(){
+      return classTime;
+   }
+}
