@@ -1,0 +1,106 @@
+ArtWorkLabel.java
+import java.util.Scanner;
+
+public class ArtworkLabel {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+
+      String userTitle, userArtistName;
+      int yearCreated, userBirthYear, userDeathYear;
+
+      userArtistName = scnr.nextLine();
+      userBirthYear = scnr.nextInt();
+      scnr.nextLine();
+      userDeathYear = scnr.nextInt();
+      scnr.nextLine();
+      userTitle = scnr.nextLine();
+      yearCreated = scnr.nextInt();
+
+      Artist userArtist = new Artist(userArtistName, userBirthYear, userDeathYear);
+
+      Artwork newArtwork = new Artwork(userTitle, yearCreated, userArtist);
+
+      newArtwork.printInfo();
+   }
+}
+
+Artist.java
+public class Artist {
+   // TODO: Declare private fields - artistName, birthYear, deathYear
+   private String artistName; 
+   private int birthYear;
+   private int deathYear;
+   
+   // TODO: Define default constructor
+   public Artist(){
+      artistName = "None";
+      birthYear = 0;
+      deathYear = 0;
+   }
+   
+   // TODO: Define second constructor to initialize 
+   //       private fields (artistName, birthYear, deathYear)
+   public Artist(String namArtistName, int totBirthYear, int totDeathYear){
+      artistName = namArtistName;
+      birthYear = totBirthYear;
+      deathYear = totDeathYear;      
+   }
+   
+   // TODO: Define get methods: getName(), getBirthYear(), getDeathYear()
+   public String getName(){
+      return artistName;
+   }
+   public int getBirthYear(){
+      return birthYear;
+   }
+   public int getDeathYear(){
+      return deathYear;
+   }
+   
+   
+   // TODO: Define printInfo() method
+   //      If deathYear is entered as -1, only print birthYear
+   public void printInfo(){
+      System.out.println("Artist: " + artistName + " " + birthYear + " " + deathYear);
+   }
+   
+}
+
+Artwork.javapublic class Artwork {
+   // TODO: Declare private fields - title, yearCreated
+   private String title;
+   private int yearCreated;
+   
+   // TODO: Declare private field artist of type Artist 
+   private Artist artist;
+   
+   // TODO: Define default constructor
+   public Artwork(){
+      title = "None";
+      yearCreated = 0;
+   }
+   
+   // TODO: Define get methods: getTitle(), getYearCreated()
+   public String getTitle(){
+      return title;
+   }
+   
+   public int getYearCreated(){
+      return yearCreated;
+   }
+   
+   // TODO: Define second constructor to initialize 
+   //       private fields (title, yearCreated, artist)
+   public Artwork(String namTitle, int totYearCreated, Artist artistFull){
+      title = namTitle;
+      yearCreated = totYearCreated;
+      artist = artistFull;
+   }
+
+   // TODO: Define printInfo() method                                                                                             
+   public void printInfo(){
+      System.out.println(artist);
+      System.out.println("Title: " + title + ", " + yearCreated);
+   }
+
+}
