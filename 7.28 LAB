@@ -1,0 +1,94 @@
+ShoppingCartPrinter.java
+import java.util.Scanner;
+
+public class ShoppingCartPrinter {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+
+      /* Type your code here. */
+      String userItemName;
+      int userItemPrice;
+      int userItemQuatity;
+      
+      ItemToPurchase userItemToPurchase1 = new ItemToPurchase();
+      userItemToPurchase1.setName(scnr.nextLine());
+      userItemToPurchase1.setPrice(scnr.nextInt());
+      userItemToPurchase1.setQuantity(scnr.nextInt());
+      System.out.println("Item 1");
+      System.out.println("Enter the item name:");
+      System.out.println("Enter the item price:");
+      System.out.println("Enter the item quantity:");
+      
+      System.out.println();
+
+      ItemToPurchase userItemToPurchase2 = new ItemToPurchase();
+      userItemToPurchase2.setName(scnr.nextLine());
+      userItemToPurchase2.setName(scnr.nextLine());
+      userItemToPurchase2.setPrice(scnr.nextInt());
+      userItemToPurchase2.setQuantity(scnr.nextInt());   
+      System.out.println("Item 2");
+      System.out.println("Enter the item name:");
+      System.out.println("Enter the item price:");
+      System.out.println("Enter the item quantity:");
+      
+      System.out.println();
+      
+      System.out.println("TOTAL COST");
+      
+      System.out.print(userItemToPurchase1.getName() + " ");
+      System.out.print(userItemToPurchase1.getQuantity() + " @ " + "$");
+      System.out.print(userItemToPurchase1.getPrice() + " = $");
+      System.out.println(userItemToPurchase1.getQuantity() * userItemToPurchase1.getPrice());
+
+      System.out.print(userItemToPurchase2.getName() + " ");
+      System.out.print(userItemToPurchase2.getQuantity() + " @ " + "$");
+      System.out.print(userItemToPurchase2.getPrice() + " = $");
+      System.out.println(userItemToPurchase2.getQuantity() * userItemToPurchase2.getPrice());
+      
+      System.out.println();
+      
+      System.out.print("Total: $");
+      System.out.println((userItemToPurchase1.getQuantity() * userItemToPurchase1.getPrice()) + (userItemToPurchase2.getQuantity() * userItemToPurchase2.getPrice()));
+    
+   }
+}
+
+
+ItemToPurchase.java
+/* Type code here. */
+public class ItemToPurchase{
+   // Private fields
+   private String itemName;
+   private int itemPrice;
+   private int itemQuantity;
+   
+   // Default Constructor
+   public ItemToPurchase(){ 
+    itemName = "None";
+    itemPrice = 0;
+    itemQuantity = 0;
+   }
+   
+   // setters
+   public void setName(String userItemName){
+      itemName = userItemName;
+   }
+   public void setPrice(int userItemPrice){
+      itemPrice = userItemPrice;
+   } 
+   public void setQuantity(int userItemQuantity){
+      itemQuantity = userItemQuantity;
+   }
+   
+   //getters
+   public String getName(){
+      return itemName;
+   }
+   public int getPrice(){
+      return itemPrice;
+   }
+   public int getQuantity(){
+      return itemQuantity;
+   }
+   
+}
