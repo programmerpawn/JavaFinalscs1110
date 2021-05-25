@@ -1,0 +1,55 @@
+import java.util.Scanner; 
+
+public class LabProgram {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in); 
+   
+      int money;
+      int totalDo;
+      int totalQ;
+      int totalDi;
+      int totalNic;
+      int totalP;
+   
+      money = scnr.nextInt();
+   
+   totalDo = money / 100; //dollar
+   //cout << total << " dollar" << endl;
+   totalQ = money % 100 / 25; //quarter
+   //cout << total << " quarter" << endl;
+   totalDi = money % 100 % 25 / 10; //dime
+   //cout << total << " dime" << endl;
+   totalNic = money % 100 % 25 % 10 / 5; //nickel
+   //cout << total << " nickel" << endl;
+   totalP = money % 100 % 25 % 10 % 5 / 1; //penny
+   //cout << total << " penny" << endl;
+   
+   if (totalDo == 1) {
+      System.out.println(totalDo + " Dollar");
+   }
+      else if (totalDo == 3) {
+         System.out.println(totalDo + " Dollars");
+         }
+      if (totalQ == 1 ) {
+         System.out.println(totalQ + " Quarter");
+         }
+         else if (totalQ == 2) {
+            System.out.println(totalQ + " Quarters");
+            }
+      if (totalDi == 1 ) {
+         System.out.println(totalDi + " Dime");
+         }
+         else if (totalDi == 2) {
+            System.out.println(totalDi + " Dimes");
+            }
+      if (totalNic >= 1 ) {
+         System.out.println(totalNic + " Nickel");
+         }
+      if (totalP >= 1) {
+         System.out.println(totalP + " Penny");
+         }
+      if (money == 0 ) {
+      System.out.println("No change");
+         }
+   }
+}
