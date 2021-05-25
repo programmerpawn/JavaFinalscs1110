@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class LabProgram {
+
+	public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+		/* Type your code here. */
+		String firstName;
+		String lastName;
+		int year;
+		int numOfLastName;
+		
+		firstName = scnr.next();
+		lastName = scnr.next();
+		
+		firstName = firstName.substring(0,1);
+		//System.out.print(firstName + "");
+		
+		numOfLastName = lastName.length();
+		if (numOfLastName > 5){
+		   lastName = lastName.substring(0,5);
+		   //System.out.print(lastName);
+		}
+		else{
+		   lastName = lastName;
+		   //System.out.print(lastName);
+		}  
+		
+	   year = scnr.nextInt();
+		year = year % 100;
+		//System.out.print(year);
+		
+		System.out.println("Your login name: " + lastName + firstName + year);
+
+	}
+}
