@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class LabProgram {
+   public static void main(String[] args) {
+      /* Type your code here. */
+      Scanner scnr = new Scanner(System.in);
+      
+      String userWord;
+      int userNumber;
+      
+      userWord = scnr.next();
+      userNumber = scnr.nextInt();
+      
+      while (!userWord.equals("quit") && (userNumber != 0))  {
+         System.out.print("Eating " + userNumber);
+         System.out.print(" " + userWord);
+         System.out.println(" a day keeps you happy and healthy.");
+         
+         userWord = scnr.next();
+         userNumber = scnr.nextInt();
+      }
+         
+   }
+}
