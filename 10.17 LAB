@@ -1,0 +1,132 @@
+BookInformation.java
+import java.util.Scanner;
+
+public class BookInformation {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+
+      Book myBook = new Book();
+      Encyclopedia myEncyclopedia = new Encyclopedia();
+
+      String title, author, publisher, publicationDate;
+      String eTitle, eAuthor, ePublisher, ePublicationDate, edition;
+      int numVolumes;
+
+      title = scnr.nextLine();
+      author = scnr.nextLine();
+      publisher = scnr.nextLine();
+      publicationDate = scnr.nextLine();
+
+      eTitle = scnr.nextLine();
+      eAuthor = scnr.nextLine();
+      ePublisher = scnr.nextLine();
+      ePublicationDate = scnr.nextLine();
+      edition = scnr.nextLine();
+      numVolumes = scnr.nextInt();
+
+      myBook.setTitle(title);
+      myBook.setAuthor(author);
+      myBook.setPublisher(publisher);
+      myBook.setPublicationDate(publicationDate);
+      myBook.printInfo();
+
+      myEncyclopedia.setTitle(eTitle);
+      myEncyclopedia.setAuthor(eAuthor);
+      myEncyclopedia.setPublisher(ePublisher);
+      myEncyclopedia.setPublicationDate(ePublicationDate);
+      myEncyclopedia.setEdition(edition);
+      myEncyclopedia.setNumVolumes(numVolumes);
+      myEncyclopedia.printInfo();
+
+    }
+}
+
+Book.java
+public class Book {
+
+   protected String title;
+   protected String author;
+   protected String publisher;
+   protected String publicationDate;
+
+   public void setTitle(String userTitle) {
+      title = userTitle;
+   }
+
+   public String getTitle() {
+      return title;
+   }
+
+   public void setAuthor(String userAuthor) {
+      author = userAuthor;
+   }
+
+   public String getAuthor(){
+      return author;
+   }
+
+   public void setPublisher(String userPublisher) {
+      publisher = userPublisher;
+   }
+
+   public String getPublisher() {
+      return publisher;
+   }
+
+   public void setPublicationDate(String userPublicationDate) {
+      publicationDate = userPublicationDate;
+   }
+
+   public String getPublicationDate() {
+      return publicationDate;
+   }
+
+   public void printInfo() {
+      System.out.println("Book Information: ");
+      System.out.println("   Book Title: " + title);
+      System.out.println("   Author: " + author);
+      System.out.println("   Publisher: " + publisher);
+      System.out.println("   Publication Date: " + publicationDate);
+   }
+}
+
+Encyclopedia.java
+public class Encyclopedia extends Book {
+   // TODO: Declare private fields: edition, numVolumes
+   private String edition;
+   private int numVolumes;
+   
+   // TODO: Define mutator methods - 
+   //       setEdition(), setNumVolumes()
+   public void setEdition(String userEdition){
+      edition = userEdition;
+   }
+   
+   public void setNumVolumes(int userNumVolumes){
+      numVolumes = userNumVolumes;
+   }
+  
+   // TODO: Define accessor methods -
+   //       getEdition(), getNumVolumes()
+   public String getEdition(){
+      return edition;
+   }
+   public int getNumVolumes(){
+      return numVolumes;
+   }
+   
+   
+   // TODO: Define a printInfo() method that overrides 
+   //       the printInfo in Book class 
+   
+   @Override
+   public void printInfo() {
+      System.out.println("Book Information: ");
+      System.out.println("   Book Title: " + title);
+      System.out.println("   Author: " + author);
+      System.out.println("   Publisher: " + publisher);
+      System.out.println("   Publication Date: " + publicationDate);
+      System.out.println("   Edition: " + edition);
+      System.out.println("   Number of Volumes: " + numVolumes);
+   }
+}
