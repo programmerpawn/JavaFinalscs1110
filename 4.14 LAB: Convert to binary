@@ -1,0 +1,23 @@
+import java.util.Scanner; 
+
+public class LabProgram {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      
+      int number = 0;
+      int binary = 0;
+      
+      number = scnr.nextInt();
+      
+      if (number > 0)
+      {
+         while(number > 0)
+         {
+            binary = number % 2;
+            number = number / 2;
+            System.out.print(binary);
+         }
+         System.out.println();
+      }
+   }
+}
